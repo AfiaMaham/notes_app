@@ -23,6 +23,10 @@ class Layout extends StatelessWidget {
       }),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
+        // here i made some changes
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
           onPressed: () {
             Navigator.push(
               context,

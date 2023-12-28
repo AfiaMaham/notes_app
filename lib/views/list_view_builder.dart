@@ -6,11 +6,12 @@ class MyView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           body: ListView.builder(
-            itemCount: 3,
+        itemCount: 3,
         itemBuilder: (context, index) => Card(
           child: ListTile(
             leading: CircleAvatar(
-              backgroundImage: NetworkImage("https://images.app.goo.gl/5Ek4mT83uQfmpLsAA"),
+              backgroundImage:
+                  NetworkImage("https://images.app.goo.gl/5Ek4mT83uQfmpLsAA"),
               backgroundColor: Colors.yellow,
               radius: 40,
             ),
