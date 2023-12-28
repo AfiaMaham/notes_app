@@ -9,31 +9,32 @@ import '../screens/home_screen.dart';
 import 'package:get/get.dart';
 
 class Layout extends StatelessWidget {
-  List<Widget> layouts = [
-    HomeLayout(),
-    ProfileLayout(),
-  ];
   TestController controller = Get.put(TestController());
 
   @override
   Widget build(BuildContext context) {
-    return Obx(() {
-      return Scaffold(
-        body: layouts[controller.selected.value],
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              Get.to(HomeScreen());
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => HomeScreen(),
-              //   ),
-              // );
-            },
-            backgroundColor: AppColor.deepPurple,
-            child: Icon(Icons.add)),
-        bottomNavigationBar: AnimatedBottomNavigationBar(
+    List<Widget> layouts = [
+      HomeLayout(),
+      ProfileLayout(),
+    ];
+    return Scaffold(
+      body: Obx(() {
+        return layouts[controller.selected.value];
+      }),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeScreen(),
+              ),
+            );
+          },
+          backgroundColor: AppColor.deepPurple,
+          child: Icon(Icons.add)),
+      bottomNavigationBar: Obx(() {
+        return AnimatedBottomNavigationBar(
           icons: [Icons.home, Icons.person],
           activeColor: AppColor.deepPurple,
           inactiveColor: AppColor.grayShade3,
@@ -46,8 +47,8 @@ class Layout extends StatelessWidget {
           notchMargin: 5,
           gapLocation: GapLocation.center,
           notchSmoothness: NotchSmoothness.defaultEdge,
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 }

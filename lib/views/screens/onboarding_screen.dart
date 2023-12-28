@@ -6,7 +6,6 @@ import '../../Widgets/text_and_style.dart';
 import '../../helpers/constants.dart';
 import 'login_screen.dart';
 
-
 class OnBoardingScreen extends StatelessWidget {
   IconData arrowForward = Icons.arrow_forward;
 
@@ -20,7 +19,7 @@ class OnBoardingScreen extends StatelessWidget {
       backgroundColor: AppColor.deepPurple,
       body: Column(
         children: [
-          SizedBox(height: 15.h),
+          SizedBox(height: 15.h), // here yoiu can use padding
           Image.asset("assets/images/Illustration1.png"),
           SizedBox(height: 3.h),
           Padding(
@@ -36,8 +35,8 @@ class OnBoardingScreen extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          GestureDetector(
-            onTap: () {
+          ContainerWidget(
+            onButtonTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -45,14 +44,12 @@ class OnBoardingScreen extends StatelessWidget {
                 ),
               );
             },
-            child: ContainerWidget(
-              text: "Let's Get Started",
-              color: AppColor.whiteColor,
-              isIcon: true,
-              textColor: AppColor.deepPurple,
-              width1: 25.w,
-              width2: 18.w,
-            ),
+            text: "Let's Get Started",
+            color: AppColor.whiteColor,
+            isIcon: true,
+            textColor: AppColor.deepPurple,
+            width1: 25.w,
+            width2: 18.w,
           ),
         ],
       ),

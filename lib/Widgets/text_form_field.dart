@@ -34,8 +34,7 @@ class FieldOfText extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       decoration: InputDecoration(
-        suffixIcon: GestureDetector(onTap:onIconTap,child: Icon(icon)),
-        // suffixIcon: GestureDetector(onTap: onIconTap, child: Icon(icon)),
+        suffixIcon: GestureDetector(onTap: onIconTap, child: Icon(icon)),
         filled: isFilled,
         fillColor: AppColor.textFilled,
         hintText: hint,
@@ -58,27 +57,27 @@ class FieldOfText extends StatelessWidget {
           borderSide: isFilled
               ? BorderSide.none
               : BorderSide(
-            width: 1,
-            color: AppColor.grayShade3,
-          ),
+                  width: 1,
+                  color: AppColor.grayShade3,
+                ),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: isFilled
               ? BorderSide.none
               : BorderSide(
-            width: 1,
-            color: AppColor.grayShade3,
-          ),
+                  width: 1,
+                  color: AppColor.grayShade3,
+                ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
           borderSide: isFilled
               ? BorderSide.none
               : BorderSide(
-            width: 1,
-            color: AppColor.grayShade3,
-          ),
+                  width: 1,
+                  color: AppColor.grayShade3,
+                ),
         ),
       ),
     );

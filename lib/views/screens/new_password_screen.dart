@@ -6,7 +6,7 @@ import '../../Widgets/text_form_field.dart';
 import '../../helpers/constants.dart';
 import 'login_screen.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:get/get.dart';
 
 class NewPasswordScreen extends StatelessWidget {
   IconData arrowBack = Icons.arrow_back_ios;
@@ -47,47 +47,45 @@ class NewPasswordScreen extends StatelessWidget {
           children: [
             TextAndStyle("Create a New Password", 32, "poppins Regular",
                 FontWeight.w600, AppColor.black),
-            SizedBox(height: 2.h),
             TextAndStyle(
-                "Your new password should be different from the previous password",
-                16,
-                "poppins Regular",
-                FontWeight.w400,
-                AppColor.grayShade2),
-            SizedBox(height: 2.h),
+                    "Your new password should be different from the previous password",
+                    16,
+                    "poppins Regular",
+                    FontWeight.w400,
+                    AppColor.grayShade2)
+                .paddingOnly(top: 2.h),
             Align(
               alignment: Alignment.centerLeft,
               child: TextAndStyle("New Password", 16, "poppins Regular",
-                  FontWeight.w500, AppColor.black),
+                      FontWeight.w500, AppColor.black)
+                  .paddingOnly(top: 2.h),
             ),
-            SizedBox(height: 1.h),
             FieldOfText(
               keyboardType: TextInputType.text,
               hint: "********",
               obscure: true,
               helper: "min.8 characters, combination of 0-9, A-Z, a-z",
               isFilled: false,
-            ),
-            SizedBox(height: 4.h),
+            ).paddingOnly(top: 1.h),
             Align(
               alignment: Alignment.centerLeft,
               child: TextAndStyle("Retype New Password", 16, "poppins Regular",
-                  FontWeight.w500, AppColor.black),
+                      FontWeight.w500, AppColor.black)
+                  .paddingOnly(top: 4.h),
             ),
-            SizedBox(height: 1.h),
             FieldOfText(
               keyboardType: TextInputType.text,
               hint: "********",
               obscure: true,
               isFilled: false,
-            ),
-            SizedBox(height: 27.h),
+            ).paddingOnly(top: 1.h),
             ContainerWidget(
               color: AppColor.deepPurple,
               text: 'Create Password',
               isIcon: false,
-              borderRadius: BorderRadius.circular(10), textColor: AppColor.whiteColor,
-            ),
+              borderRadius: BorderRadius.circular(10),
+              textColor: AppColor.whiteColor,
+            ).paddingOnly(top: 27.h),
           ],
         ),
       ),

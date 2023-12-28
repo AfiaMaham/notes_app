@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sizer/sizer.dart';
 import '../../../Widgets/text_and_style.dart';
 import '../../../Widgets/text_form_field.dart';
 import '../../../helpers/constants.dart';
 import '../../Widgets/container_widget.dart';
+import '../../controller/test_controller.dart';
 
 class HomeScreen extends StatelessWidget {
-  TextEditingController _titleController = TextEditingController();
+  TestController controller = Get.put(TestController());
+  TextEditingController titleController = TextEditingController();
+  TextEditingController dataController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -20,65 +24,57 @@ class HomeScreen extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  SizedBox(width: 33.w),
                   TextAndStyle("Notes", 23.sp, "poppins Regular",
-                      FontWeight.w600, AppColor.black),
-                  SizedBox(
-                    width: 25.w,
-                  ),
+                          FontWeight.w600, AppColor.black)
+                      .paddingOnly(left: 33.w),
                   TextAndStyle("Edit", 13.sp, "poppins Regular",
-                      FontWeight.w200, AppColor.grayShade),
+                          FontWeight.w200, AppColor.grayShade)
+                      .paddingOnly(left: 25.w),
                 ],
               ),
-              SizedBox(
-                height: 10.w,
-              ),
               TextAndStyle("Name", 13.sp, "poppins Regular", FontWeight.w200,
-                  AppColor.black),
-              SizedBox(
-                height: 2.w,
-              ),
+                      AppColor.black)
+                  .paddingOnly(top: 5.h),
               FieldOfText(
                 isFilled: true,
                 keyboardType: TextInputType.text,
                 hint: "Muhammad Ali Hassan Sheikh",
                 icon: Icons.cancel_outlined,
-                controller: _titleController,
+                controller: titleController,
                 onIconTap: () {
-                  _titleController.clear();
+                  titleController.clear();
                 },
-              ),
-              SizedBox(
-                height: 3.w,
-              ),
+              ).paddingOnly(top: 1.5.h),
               TextAndStyle("Write your data here", 13.sp, "poppins Regular",
-                  FontWeight.w200, AppColor.black),
-              SizedBox(
-                height: 2.w,
-              ),
+                      FontWeight.w200, AppColor.black)
+                  .paddingOnly(top: 2.h),
               Container(
                 height: 30.h,
                 child: FieldOfText(
                   maxLines: 25,
                   keyboardType: TextInputType.text,
                   isFilled: true,
+                  controller: dataController,
                   hint:
                       "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
                 ),
-              ),
-              SizedBox(
-                height: 23.h,
-              ),
+              ).paddingOnly(top: 1.5.h),
               ContainerWidget(
                 color: AppColor.deepPurple,
                 text: 'Save',
                 isIcon: false,
                 textColor: AppColor.whiteColor,
                 borderRadius: BorderRadius.circular(10),
-              ),
-              SizedBox(
-                height: 3.h,
-              ),
+                onButtonTap: () {
+                  Map<String, String> newNotes = {
+                    'title': titleController.text,
+                    'data': dataController.text,
+                  };
+                  controller.notes.add(newNotes);
+                  // Get.back();
+                  Navigator.pop(context);
+                },
+              ).paddingOnly(top: 23.h, bottom: 3.h),
             ],
           ),
         ),

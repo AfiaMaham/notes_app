@@ -5,7 +5,7 @@ import '../../Widgets/container_widget.dart';
 import '../../Widgets/text_form_field.dart';
 import '../../helpers/constants.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:get/get.dart';
 import 'new_password_screen.dart';
 
 class ForgotPasswordScreen extends StatelessWidget {
@@ -41,46 +41,45 @@ class ForgotPasswordScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset("assets/images/Illustration1.png"),
-              SizedBox(height: 5.h),
-              Align(
-                alignment: Alignment.topLeft,
-                child: TextAndStyle("Forgot Password", 32, "poppins Regular",
-                    FontWeight.w600, AppColor.black),
+              Padding(
+                padding: EdgeInsets.only(top: 4.h),
+                child: Image.asset("assets/images/Illustration1.png")
+                    .paddingSymmetric(horizontal: 10.w),
               ),
-              SizedBox(height: 2.h),
+              TextAndStyle("Forgot Password", 32, "poppins Regular",
+                      FontWeight.w600, AppColor.black)
+                  .paddingOnly(top: 5.h),
               TextAndStyle(
-                  "Inset your email address to receive a code for creating a new password",
-                  16,
-                  "poppins Regular",
-                  FontWeight.w400,
-                  AppColor.grayShade2),
-              SizedBox(height: 4.h),
-              Align(
-                alignment: Alignment.topLeft,
-                child: TextAndStyle("Email Address", 16, "poppins Regular",
-                    FontWeight.w400, AppColor.black),
-              ),
-              SizedBox(height: 1.h),
+                      "Inset your email address to receive a code for creating a new password",
+                      16,
+                      "poppins Regular",
+                      FontWeight.w400,
+                      AppColor.grayShade2)
+                  .paddingOnly(top: 2.h),
+              TextAndStyle("Email Address", 16, "poppins Regular",
+                      FontWeight.w400, AppColor.black)
+                  .paddingOnly(top: 4.h),
               FieldOfText(
                 keyboardType: TextInputType.emailAddress,
                 hint: "anto_michael@gmail.com",
                 isFilled: false,
-              ),
-              SizedBox(height: 10.h),
+              ).paddingOnly(top: 1.h),
               GestureDetector(
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => NewPasswordScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => NewPasswordScreen()),
                   );
                 },
                 child: ContainerWidget(
                   color: AppColor.deepPurple,
                   text: 'Send Code',
-                  isIcon: false, textColor: AppColor.whiteColor,
-                ),
+                  isIcon: false,
+                  textColor: AppColor.whiteColor,
+                ).paddingOnly(top: 10.h),
               ),
             ],
           ),

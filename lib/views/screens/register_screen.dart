@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:sizer/sizer.dart';
-
+import 'package:get/get.dart';
 import '../../Widgets/container_widget.dart';
 import '../../Widgets/text_and_style.dart';
 import '../../Widgets/text_form_field.dart';
@@ -9,7 +9,6 @@ import '../../helpers/constants.dart';
 
 class RegisterScreen extends StatelessWidget {
   IconData arrowBack = Icons.arrow_back_ios;
-
   IconData arrowForward = Icons.arrow_forward;
 
   @override
@@ -44,53 +43,47 @@ class RegisterScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 1.h),
               TextAndStyle("Register", 32, "poppins Regular", FontWeight.w600,
-                  AppColor.black),
-              SizedBox(height: 1.h),
+                      AppColor.black)
+                  .paddingOnly(top: 1.h),
               TextAndStyle("And start taking notes", 16, "poppins Regular",
-                  FontWeight.w400, AppColor.grayShade2),
-              SizedBox(height: 4.h),
+                      FontWeight.w400, AppColor.grayShade2)
+                  .paddingOnly(top: 1.h),
               TextAndStyle("Full Name", 16, "poppins Regular", FontWeight.w600,
-                  AppColor.black),
-              SizedBox(height: 1.h),
+                      AppColor.black)
+                  .paddingOnly(top: 4.h),
               FieldOfText(
                 keyboardType: TextInputType.name,
                 hint: "Example: John Doe",
                 isFilled: false,
-              ),
-              SizedBox(height: 4.h),
+              ).paddingOnly(top: 1.h),
               TextAndStyle("Email Address", 16, "poppins Regular",
-                  FontWeight.w600, AppColor.black),
-              SizedBox(height: 1.h),
+                      FontWeight.w600, AppColor.black)
+                  .paddingOnly(top: 4.h),
               FieldOfText(
                 keyboardType: TextInputType.emailAddress,
                 hint: "Example: johndoe@gmail.com",
                 isFilled: false,
-              ),
-              SizedBox(height: 4.h),
+              ).paddingOnly(top: 1.h),
               TextAndStyle("Password", 16, "poppins Regular", FontWeight.w600,
-                  AppColor.black),
+                      AppColor.black)
+                  .paddingOnly(top: 4.h),
               SizedBox(height: 1.h),
               FieldOfText(
                 keyboardType: TextInputType.text,
                 hint: "********",
                 obscure: true,
                 isFilled: false,
-              ),
-              SizedBox(height: 4.h),
+              ).paddingOnly(top: 1.h),
               TextAndStyle("Retype Password", 16, "poppins Regular",
-                  FontWeight.w600, AppColor.black),
-              SizedBox(height: 1.h),
+                      FontWeight.w600, AppColor.black)
+                  .paddingOnly(top: 4.h),
               FieldOfText(
                 keyboardType: TextInputType.text,
                 hint: "********",
                 obscure: true,
                 isFilled: false,
-              ),
-              SizedBox(
-                height: 4.h,
-              ),
+              ).paddingOnly(top: 1.h),
               GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
@@ -102,9 +95,8 @@ class RegisterScreen extends StatelessWidget {
                   width2: 25.w,
                   isIcon: true,
                   textColor: AppColor.whiteColor,
-                ),
+                ).paddingOnly(top: 4.h),
               ),
-              SizedBox(height: 1.5.h),
               Row(
                 children: [
                   Expanded(
@@ -126,8 +118,7 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-              SizedBox(height: 1.5.h),
+              ).paddingOnly(top: 1.5.h),
               Container(
                 height: 7.h,
                 width: 90.w,
@@ -151,13 +142,12 @@ class RegisterScreen extends StatelessWidget {
                         FontWeight.w500, AppColor.black),
                   ],
                 ),
-              ),
-              SizedBox(height: 4.h),
+              ).paddingOnly(top: 1.5.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TextAndStyle("Already have an account?", 16, "poppins Regular",
-                      FontWeight.w500, AppColor.deepPurple),
+                  TextAndStyle("Already have an account?", 16,
+                      "poppins Regular", FontWeight.w500, AppColor.deepPurple),
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);
@@ -166,8 +156,7 @@ class RegisterScreen extends StatelessWidget {
                         FontWeight.w500, AppColor.deepPurple),
                   ),
                 ],
-              ),
-              SizedBox(height: 2.h),
+              ).paddingOnly(top: 4.h, bottom: 2.h),
             ],
           ),
         ),

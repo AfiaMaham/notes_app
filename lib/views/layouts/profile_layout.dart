@@ -3,7 +3,7 @@ import 'package:notes_app/helpers/constants.dart';
 import 'package:sizer/sizer.dart';
 import '../../Widgets/text_and_style.dart';
 import '../screens/new_password_screen.dart';
-
+import 'package:get/get.dart';
 
 class ProfileLayout extends StatelessWidget {
   @override
@@ -21,14 +21,9 @@ class ProfileLayout extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: 3.h,
-            ),
-            TextAndStyle(
-                "Michael Antonio", 15.sp, "poppins Regular", FontWeight.bold),
-            SizedBox(
-              height: 1.h,
-            ),
+            TextAndStyle("Michael Antonio", 15.sp, "poppins Regular",
+                    FontWeight.bold)
+                .paddingOnly(top: 3.h),
             Row(
               children: [
                 Icon(
@@ -42,10 +37,7 @@ class ProfileLayout extends StatelessWidget {
                 TextAndStyle("anto_michael@gmail.com", 10.sp, "poppins Regular",
                     FontWeight.w200, AppColor.grayShade)
               ],
-            ),
-            SizedBox(
-              height: 4.h,
-            ),
+            ).paddingOnly(top: 1.h),
             Container(
               height: 5.h,
               width: 90.w,
@@ -66,20 +58,15 @@ class ProfileLayout extends StatelessWidget {
                       FontWeight.w200, AppColor.deepPurple),
                 ],
               ),
-            ),
-            SizedBox(
-              height: 3.h,
-            ),
+            ).paddingOnly(top: 4.h),
             Divider(
               indent: 3.w,
               endIndent: 3.w,
               thickness: 1,
-            ),
-            SizedBox(
-              height: 2.h,
-            ),
+            ).paddingOnly(top: 3.h),
             TextAndStyle("APP SETTINGS", 10.sp, "poppins Regular",
-                FontWeight.w200, AppColor.grayShade),
+                    FontWeight.w200, AppColor.grayShade)
+                .paddingOnly(top: 2.h),
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -98,33 +85,21 @@ class ProfileLayout extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    SizedBox(
-                      width: 3.w,
-                    ),
-                    Icon(Icons.lock_outline),
-                    SizedBox(
-                      width: 3.w,
-                    ),
+                    Icon(Icons.lock_outline).paddingOnly(left: 3.w),
                     TextAndStyle(
                       "Change Password",
                       14.sp,
                       "poppins Regular",
                       FontWeight.w200,
-                    ),
-                    SizedBox(
-                      width: 28.w,
-                    ),
+                    ).paddingOnly(left: 3.w),
                     Icon(
                       Icons.arrow_forward_ios,
                       size: 12.sp,
                       color: AppColor.grayShade,
-                    ),
+                    ).paddingOnly(left: 28.w),
                   ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 2.h,
             ),
             Container(
               height: 7.h,
@@ -149,7 +124,7 @@ class ProfileLayout extends StatelessWidget {
                       FontWeight.w200, AppColor.red),
                 ],
               ),
-            ),
+            ).paddingOnly(top: 2.h),
           ],
         ),
       ),
