@@ -22,7 +22,7 @@ class FieldOfText extends StatelessWidget {
     this.icon,
     this.maxLines,
     this.onIconTap,
-    this.controller,
+    this.controller ,
   });
 
   @override

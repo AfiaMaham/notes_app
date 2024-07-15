@@ -11,7 +11,6 @@ class HomeScreen extends StatelessWidget {
   TestController controller = Get.put(TestController());
   TextEditingController titleController = TextEditingController();
   TextEditingController dataController = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(

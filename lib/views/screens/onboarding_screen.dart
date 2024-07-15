@@ -5,7 +5,7 @@ import '../../Widgets/container_widget.dart';
 import '../../Widgets/text_and_style.dart';
 import '../../helpers/constants.dart';
 import 'login_screen.dart';
-
+import 'package:get/get.dart';
 class OnBoardingScreen extends StatelessWidget {
   IconData arrowForward = Icons.arrow_forward;
 
@@ -37,6 +37,7 @@ class OnBoardingScreen extends StatelessWidget {
           ),
           ContainerWidget(
             onButtonTap: () {
+              // Get.to(ScreenLogin());
               Navigator.push(
                 context,
                 MaterialPageRoute(

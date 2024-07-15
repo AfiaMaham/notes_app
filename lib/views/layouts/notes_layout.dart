@@ -4,14 +4,22 @@ import 'package:notes_app/helpers/constants.dart';
 import 'package:sizer/sizer.dart';
 import 'package:get/get.dart';
 import '../../controller/test_controller.dart';
-
+import 'package:get_storage/get_storage.dart';
 class NotesLayout extends StatelessWidget {
-  TestController controller = Get.put(TestController());
-
   @override
   Widget build(BuildContext context) {
+    TestController controller = Get.put(TestController());
+
     return Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          leading: Builder(
+            builder: (context) {
+              return GestureDetector(onTap:(){
+                Scaffold.of(context).openDrawer();
+              },child: Icon(Icons.menu));
+            }
+          ),
           backgroundColor: AppColor.whiteColor,
           elevation: 0,
           title: TextAndStyle("Home", 18.sp, "poppins Regular", FontWeight.w600,

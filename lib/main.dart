@@ -1,10 +1,12 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:notes_app/helpers/constants.dart';
+import 'package:notes_app/practice/page%20view%20builder.dart';
 import 'package:notes_app/views/screens/onboarding_screen.dart';
 import 'package:sizer/sizer.dart';
-
-void main() {
+import 'package:get_storage/get_storage.dart';
+void main() async{
+  await GetStorage.init();
   runApp(MyApp());
 }
 
@@ -15,9 +17,6 @@ class MyApp extends StatelessWidget {
         (BuildContext context, Orientation orientation, DeviceType deviceType) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        // home:SplashScreen(),
-        // home: OnBoardingScreen(),
-
         home: AnimatedSplashScreen(
           backgroundColor: AppColor.deepPurple,
           duration: 2000,

@@ -16,17 +16,16 @@ class ContainerWidget extends StatelessWidget {
   double? width2;
   VoidCallback? onButtonTap;
 
-  ContainerWidget({
-    this.padding,
-    required this.color,
-    required this.text,
-    this.borderRadius,
-    required this.isIcon,
-    required this.textColor,
-    this.width1,
-    this.width2,
-    this.onButtonTap
-  });
+  ContainerWidget(
+      {this.padding,
+      required this.color,
+      required this.text,
+      this.borderRadius,
+      required this.isIcon,
+      required this.textColor,
+      this.width1,
+      this.width2,
+      this.onButtonTap});
 
   @override
   Widget build(BuildContext context) {
